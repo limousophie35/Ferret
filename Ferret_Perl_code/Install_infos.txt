@@ -1,0 +1,76 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                ######   ######   ####    ####    ######   #######                     
+                #        #        #   #   #   #   #           #
+                ###      ###      # #     # #     ###         #
+                #        #        # #     # #     #           #
+                #        #####    #   #   #   #   #####       #
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Contact Dr Sophie Limou, sophie.limou@nih.gov ~ December 4th, 2015
+       URL: http://limousophie35.github.io/Ferret
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        ?? HOW TO INSTALL THIS PROGRAM ??
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+=> This program requires several tools/dependencies to work:
+	- wget
+	- tabix
+	- vcftools
+	- Plink
+If these tools are not yet installed on your computer, below is described the 
+install process for the current/latest versions from your Terminal console: 
+----------------------------------------------------------------------------------
+1) Install wget:
+
+> ftp ftp://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
+> tar -xvzf wget-1.13.4.tar.gz
+> cd wget-1.17
+> ./configure --with-ssl=openssl
+> make
+> sudo make install
+----------------------------------------------------------------------------------
+2) Install tabix:
+
+> wget http://sourceforge.net/projects/samtools/files/tabix/tabix-0.2.6.tar.bz2
+> tar -jxvf tabix-0.2.6.tar.bz2
+> cd tabix-0.2.6
+> make
+----------------------------------------------------------------------------------
+3) Install vcftools:
+
+> wget http://sourceforge.net/projects/vcftools/files/vcftools_0.1.13.tar.gz
+> tar -zxvf vcftools_0.1.13.tar.gz
+> cd vcftools_0.1.13
+> make
+----------------------------------------------------------------------------------
+4) Install Plink:
+
+Download Plink at http://pngu.mgh.harvard.edu/~purcell/plink/download.shtml
+> unzip plink-1.07-x86_64.zip.zip
+----------------------------------------------------------------------------------
+5) I then recommend to put all these tools into your Applications folder for Mac 
+users (or /usr/local/bin/ for Unix/Linux) and add them to the PATH variable.
+
+If you are not familiar with the concept of the PATH variable, ask your system 
+administrator to help.
+
+> sudo pico ~/.profile
+Enter Admin password and add the following lines (e.g. for Mac OS):
+  PATH=$PATH:/Applications/wget-1.17
+  PATH=$PATH:/Applications/tabix-0.2.6
+  PATH=$PATH:/Applications/vcftools_0.1.13/cpp
+  PATH=$PATH:/Applications/plink-1.07-x86_64.zip
+Save and quit
+
+
+==================================================================================
+
+
+=> This program was written in perl which is included by default on Mac OS X and 
+Unix/Linux systems. You can download the latest perl version for Mac, Unix/Linux, 
+and Windows at http://www.perl.org/get.html.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
