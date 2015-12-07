@@ -17,13 +17,14 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/limousophie35/Ferret_website">View on GitHub</a>
+          <img align="right" src="images/ferret.jpg" height="100" width="100" />
 
-          <h1 id="project_title">Ferret test</h1>
+          <h1 id="project_title">Ferret</h1>
           <h2 id="project_tagline">A user-friendly tool to extract data from the 1000 Genomes Project</h2>
+          
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/limousophie35/Ferret_website/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/limousophie35/Ferret_website/tarball/master">Download this project as a tar.gz file</a>
+              <a class="ferret_download_link" href="https://github.com/limousophie35/Ferret/master/Ferret_v2.0.1.jar">Download Ferret</a>
             </section>
         </header>
     </div>
@@ -31,9 +32,6 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><img alt="Ferret_logo"></p>
-
-<p><img src="http://images.google.fr/imgres?imgurl=http://www.petco.com/assets/product_images/live_animal/ferret_D.jpg&amp;imgrefurl=http://www.petco.com/product/118342/Ferret.aspx&amp;h=1500&amp;w=1500&amp;tbnid=2U2izgV_HSFi3M:&amp;tbnh=186&amp;tbnw=186&amp;usg=__2Tm7U4_Wx7yt4ruT2WhzIszfDEw=&amp;docid=sOeHg_CKgGlGhM&amp;itg=1" alt=""></p>
 
 <h3>
 <a id="about-ferret" class="anchor" href="#about-ferret" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>About Ferret</strong>
@@ -45,7 +43,7 @@
 <a id="what-does-ferret-do" class="anchor" href="#what-does-ferret-do" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What does Ferret do?</strong>
 </h3>
 
-<p><img alt="Workflow"><br>
+<p><img align="middle" src="images/Ferret_workflow-ESP.png" height="620"\><br>
 *1KG, 1000 Genomes; ESP, Exome Sequencing Project; LD, linkage disequilibrium; CHROM, chromosome; POS, position; NB_CHR, number of chromosomes; A1, allele 1; A2, allele 2; FREQ, frequency.</p>
 
 <h3>
@@ -71,13 +69,21 @@
 <a id="citation" class="anchor" href="#citation" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Citation</strong>
 </h3>
 
-<p>Limou S, Taverner A, Nelson G, Winkler CA. Ferret: a user-friendly Java tool to extract data from the 1000 Genomes project. Presented at the Annual meeting of the American Society of Human Genetics (ASHG), 2015, Baltimore MD, USA (Download Poster).</p>
+<p>Limou S, Taverner A, Nelson G, Winkler CA. Ferret: a user-friendly Java tool to extract data from the 1000 Genomes project. Poster 1718T presented at the Annual meeting of the American Society of Human Genetics (ASHG), 2015, Baltimore MD, USA (<a href="2015_ASHG_poster_vf.pdf">Download Poster</a>).</p>
 
 <h3>
 <a id="download-ferret" class="anchor" href="#download-ferret" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Download Ferret</strong>
 </h3>
-
+<section id="downloadsbis">
+    <a class="ferret_download_link" href="https://github.com/limousophie35/Ferret/master/Ferret_v2.0.1.jar">Download Ferret</a> 
+</section>
 <p>Ferret’s only pre-requisite is to have <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java JRE 8</a> installed on your computer. In addition, Ferret requires <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java JDK 8</a> to retrieve allelic frequencies from the Exome Sequencing Project.</p>
+
+<section id="downloadster">
+   <a class="java_download_link" href="https://github.com/limousophie35/Ferret/master/zipball/Ferret_Java_code">Download Ferret Java source code</a>
+   <a class="perl_download_link" href="https://github.com/limousophie35/Ferret/master/zipball/Ferret_Perl_code">Download Ferret perl script</a> 
+</section>
+<p>For queries from a Terminal console and for integration into pipelines, we also provide Ferret perl script and Java source code.</p>
 
 <h3>
 <a id="version-history" class="anchor" href="#version-history" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Version history</strong>
@@ -86,7 +92,7 @@
 <h5>
 <a id="2015-august-12" class="anchor" href="#2015-august-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015, August 12</h5>
 
-<p>This new version includes several new features: </p>
+<p>This new version was presented at the ASHG 2015 meeting and includes several new features: </p>
 
 <ul>
 <li>Retrieves 1KG data from a locus, gene(s), or SNP(s) of interest,</li>
@@ -124,7 +130,7 @@
 <li>Why are the gene coordinates different from the 1000 Genomes browser?</li>
 </ol>
 
-<p><strong>1.    How to report a bug or ask a question?ref1</strong><br>
+<p><strong>1.    How to report a bug or ask a question?</strong><br>
 First, make sure that you have the latest version installed on your computer (see #2 and 3). Then, please check carefully the website and FAQ to be sure that your problem was not already solved. Finally, you can send us an email (<a href="mailto:ferret@nih.gov">ferret@nih.gov</a>) with as much detail as possible (including your operating system and Java versions), and we’ll do our best to answer you in a timely manner.</p>
 
 <p><strong>2.    Which Java version does Ferret require to run on my computer?</strong><br>
@@ -151,22 +157,22 @@ If you want to access the data from two populations independently (<em>e.g.</em>
 
 <p><strong>8.    How do I input more than one gene?</strong><br>
 You have two options:<br>
-1. You can enter manually the list of genes separated by a comma in the input box;<br>
-2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of genes. A carriage return can also be used as a delimiter for all file types.<br>
+&nbsp;&nbsp;&nbsp;1. You can enter manually the list of genes separated by a comma in the input box;<br>
+&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of genes. A carriage return can also be used as a delimiter for all file types.<br>
 <em>Important:</em> do not forget to indicate if your input corresponds to gene name or gene ID.</p>
 
 <p><strong>9.    How do I input more than one SNP?</strong><br>
 You have two options:<br>
-1. You can enter manually the list of SNPs separated by a comma in the input box;<br>
-2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.<br>
+&nbsp;&nbsp;&nbsp;1. You can enter manually the list of SNPs separated by a comma in the input box;<br>
+&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.<br>
 <em>Important:</em> indicate only the unique rs number without the letters ‘rs’ (e.g. 333 for rs333).</p>
 
 <p><strong>10.   What can I do with the output files?</strong><br>
 Ferret generates 4 output files:<br>
-<em>.frq:</em> list of all identified variants (SNPs, indels and CNV) along with chromosome, variant ID, hg19 chromosome position and alleles, as well as allelic frequency in the input population(s) (see also #11 and #12). The variant ID corresponds to the rs number when available, and to the hg19 chromosome position when no rs number is reported (see also #15).<br>
-<em>.map</em><br>
-<em>.ped</em><br>
-<em>.info</em><br>
+&nbsp;&nbsp;&nbsp;<em>.frq:</em> list of all identified variants (SNPs, indels and CNV) along with chromosome, variant ID, hg19 chromosome position and alleles, as well as allelic frequency in the input population(s) (see also #11 and #12). The variant ID corresponds to the rs number when available, and to the hg19 chromosome position when no rs number is reported (see also #15).<br>
+&nbsp;&nbsp;&nbsp;<em>.map</em><br>
+&nbsp;&nbsp;&nbsp;<em>.ped</em><br>
+&nbsp;&nbsp;&nbsp;<em>.info</em><br>
 The .map, .ped and .info files allow you to open, visualize and manipulate the genotype data with the popular <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a> tools. You can then easily access linkage disequilibrium and haplotype information for the 1000 Genomes SNPs and indels, merge the 1000 Genomes data with your own datasets, design tagSNPs, etc.</p>
 
 <p><strong>11.   In the .frq file, what do the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to?</strong><br>

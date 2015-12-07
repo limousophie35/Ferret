@@ -56,6 +56,8 @@ body {
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -141,11 +143,7 @@ img {
   margin: 10px 0 10px 0;
   border: 1px solid #ebebeb;
 
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
+
 }
 
 p img {
@@ -286,7 +284,7 @@ Full-Width Styles
   border-bottom-right-radius: 2px;
 }
 
-#header_wrap {
+#header_wrap {\header\
   background: #212121;
   background: -moz-linear-gradient(top, #373737, #212121);
   background: -webkit-linear-gradient(top, #373737, #212121);
@@ -313,11 +311,13 @@ Full-Width Styles
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
+  max-width:450px;
 }
 
 #downloads {
   position: absolute;
-  width: 210px;
+  /*width: 310px;*/
+  width: 120px;
   z-index: 10;
   bottom: -40px;
   right: 0;
@@ -325,33 +325,53 @@ Full-Width Styles
   background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
 
-.zip_download_link {
+.ferret_download_link {
   display: block;
   float: right;
   width: 90px;
   height:70px;
   text-indent: -5000px;
   overflow: hidden;
-  background: url(../images/sprite_download.png) no-repeat bottom left;
+  background: url(../images/ferret_1.png);
+  background-size: auto 100%;
 }
 
-.tar_download_link {
+.java_download_link {
   display: block;
   float: right;
   width: 90px;
   height:70px;
   text-indent: -5000px;
   overflow: hidden;
-  background: url(../images/sprite_download.png) no-repeat bottom right;
-  margin-left: 10px;
+  background: url(../images/Java.png);
+  background-size: auto 100%;
+  margin-left: 5px;
 }
 
-.zip_download_link:hover {
-  background: url(../images/sprite_download.png) no-repeat top left;
+.perl_download_link {
+  display: block;
+  float: right;
+  width: 90px;
+  height:70px;
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../images/perl.png);
+  background-size: auto 100%;
 }
 
-.tar_download_link:hover {
-  background: url(../images/sprite_download.png) no-repeat top right;
+.ferret_download_link:hover {
+  background: url(../images/ferret_1_blue.png);
+  background-size: auto 100%;
+}
+
+.java_download_link:hover {
+  background: url(../images/Java_blue.png);
+  background-size: auto 100%;
+}
+
+.perl_download_link:hover {
+  background: url(../images/perl_blue.png);
+  background-size: auto 100%;
 }
 
 #main_content_wrap {
@@ -362,6 +382,26 @@ Full-Width Styles
 
 #main_content {
   padding-top: 40px;
+}
+
+#downloadsbis {
+  position: relative;
+  width: 120px;
+  height: 70px;
+  right: 0;
+  top: -20;
+  float:right;
+  background: url('../images/icon_download.png') no-repeat 0% 90%; 
+}
+
+#downloadster {
+  position: relative;
+  width: 215px;
+  height: 70px;
+  right: 0;
+  top: -20;
+  float:right;
+  background: url('../images/icon_download.png') no-repeat 0% 90%; 
 }
 
 #footer_wrap {
