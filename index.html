@@ -79,14 +79,14 @@
 <h3>
 <a id="ferret-time" class="anchor" href="#ferret-time" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Ferret runtime</strong>
 </h3>
-<p>Several factors can impact runtime, such as the computer specs, the network quality, or the 1KG server access (<em>e.g.</em> running a large query at 2pm takes longer than at 9pm), so the numbers below are given for guidance only. The population size does not significantly impact Ferret runtimes.</p>
+<p>Several factors can impact runtime, such as the computer specs, the network quality, or the 1KG server access (<em>e.g.</em> running a large query at 2pm EST takes longer than at 9pm EST), so the numbers below are given for guidance only. The population size does not significantly impact Ferret runtimes.</p>
 <ul>
-  <li>Ferret runs for about 3min for a 100kb locus and 35min for a 1Mb locus:</li>
+  <li>For <strong>locus inputs</strong>, Ferret runs for about 3min for a 100kb locus and 35min for a 1Mb locus:</li>
   <img align="middle" src="images/Locus_runtime.png" style="border:0px;margin-left:15px;margin-bottom:-5px;margin-top:-5px;" height="550"\>
   <br>For locus with a size &ge;1Mb, we recommend using our Perl script, which is <a href="images/Perl_runtime.png">faster</a> than our Java application (P=2.7x10<sup>-4</sup>).<br><br>
-  <li>Ferret runtime is approximately 4min for 10 SNPs and 35min for 100 SNPs:</li>
+  <li>For <strong>SNP inputs</strong>, Ferret runtime is approximately 4min for 10 SNPs and 35min for 100 SNPs:</li>
   <img align="middle" src="images/SNP_runtime.png" style="border:0px;margin-left:55px;margin-top:-5px;" height="350"\>
-  <li>Runtimes are much more variable for genes (between 16 and 55 min for 10 genes), as gene size and variant density can be highly variable:</li>
+  <li>Runtimes are much more variable for <strong>gene inputs</strong> (between 16 and 55 min for 10 genes), as gene size and variant density can be highly variable:</li>
   <img align="middle" src="images/Gene_runtime.png" style="border:0px;margin-left:50px;margin-top:5px;margin-bottom:-5px;" height="150"\>
 </ul>
 
