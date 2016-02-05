@@ -37,14 +37,14 @@
 <a id="about-ferret" class="anchor" href="#about-ferret" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>About Ferret</strong>
 </h3>
 
-<p>Ferret is a user-friendly tool to quickly extract human genetic variation data from the latest release of the <a href="http://www.1000genomes.org/">1000 Genomes (1KG) Project</a>. Ferret was developed as a straightforward Java application to be accessible even for non-specialists who are not adept at the 1KG bioinformatics tools. By converting the 1KG vcf files to a format that can be read by popular pre-existing tools (<em>e.g.</em> <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a>), Ferret offers easy manipulation and visualization of the 1KG SNP and indel data, easy access to allelic frequency, linkage disequilibrium and haplotype information, and eventually tagSNP design.</p>
+<p>Ferret is a user-friendly tool to quickly extract human genetic variation data from the latest release of the <a href="http://www.1000genomes.org/">1000 Genomes (1KG) Project</a>. Ferret was developed as a straightforward Java application to be accessible even for non-specialists who are not adept at bioinformatics. By converting the 1KG vcf files to a format that can be read by popular pre-existing tools (<em>e.g.</em> <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a>), Ferret offers easy manipulation and visualization of the 1KG SNP and indel data, easy access to allelic frequency, linkage disequilibrium and haplotype information, and eventually tagSNP design.</p>
 
 <h3>
 <a id="what-does-ferret-do" class="anchor" href="#what-does-ferret-do" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What does Ferret do?</strong>
 </h3>
 
-<p><img align="middle" src="images/Ferret_workflow-ESP.png" height="620"\><br>
-*1KG, 1000 Genomes; ESP, Exome Sequencing Project; LD, linkage disequilibrium; CHROM, chromosome; POS, position; NB_CHR, number of chromosomes; A1, allele 1; A2, allele 2; FREQ, frequency.</p>
+<img align="middle" src="images/Ferret_workflow-ESP.png" height="620" style="border:0px;"\><br>
+<p>*1KG, 1000 Genomes; ESP, Exome Sequencing Project; LD, linkage disequilibrium; CHROM, chromosome; POS, position; NB_CHR, number of chromosomes; A1, allele 1; A2, allele 2; FREQ, frequency.</p>
 
 <h3>
 <a id="ferret-unique-features" class="anchor" href="#ferret-unique-features" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Ferret unique features:</strong>
@@ -60,10 +60,51 @@
 </ul>
 
 <h3>
+<a id="ferret-options" class="anchor" href="#ferret-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Ferret options</strong>
+</h3>
+
+<p>The user can access the Settings panel in the Ferret tab and can set the following options:</p>
+<div id="options" style="position:relative;margin-top:-25px;margin-bottom:20px;"> <!-- margin-top is to add or remove space relative to text -->
+  <img align="right" src="images/Settings.png" height="190" style="margin-left:10px;border:0px;"\><br>
+  <span style="position:!important;bottom:10px;">
+    <ul>
+    <li>1000 Genomes version: Phase 3 (default) or Phase 1</li>
+    <li>Human genome version: hg19/GRCh37 (default) or hg38/GRCh38</li>
+    <li>Minor allele frequency (MAF) threshold for variants to output</li>
+    <li>Output file format: Plink/HaploView files + allele frequency file, or allele frequency file only, or .vcf file</li>
+    </ul>
+  </span>
+</div>
+
+<h3>
+<a id="ferret-time" class="anchor" href="#ferret-time" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Ferret runtime</strong>
+</h3>
+<p>Several factors can impact runtime, such as the computer specs, the network quality, or the 1KG server access (<em>e.g.</em> running a large query at 2pm takes longer than at 9pm), so the numbers below are given for guidance only. The population size does not significantly impact Ferret runtimes.</p>
+<ul>
+  <li>Ferret runs for about 3min for a 100kb locus and 35min for a 1Mb locus:</li>
+  <img align="middle" src="images/Locus_runtime.png" style="border:0px;margin-left:15px;margin-bottom:-5px;margin-top:-5px;" height="550"\>
+  <br>For locus with a size &ge;1Mb, we recommend using our Perl script, which is <a href="images/Perl_runtime.png">faster</a> than our Java application (P=2.7x10<sup>-4</sup>).<br><br>
+  <li>Ferret runtime is approximately 4min for 10 SNPs and 35min for 100 SNPs:</li>
+  <img align="middle" src="images/SNP_runtime.png" style="border:0px;margin-left:55px;margin-top:-5px;" height="350"\>
+  <li>Runtimes are much more variable for genes (between 16 and 55 min for 10 genes), as gene size and variant density can be highly variable:</li>
+  <img align="middle" src="images/Gene_runtime.png" style="border:0px;margin-left:50px;margin-top:5px;margin-bottom:-5px;" height="150"\>
+</ul>
+
+<h3>
+<a id="ferret-disc" class="anchor" href="#ferret-disc" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Ferret output files size</strong>
+</h3>
+<p>The reference population(s) size is the main factor impacting output file size:</p>
+<ul>
+  <li>For a 100kb locus, 1MB disc space would be occupied for the CEU individuals while 28MB would be required for all 1KG population</li>
+  <li>For a 1Mb locus, 14MB and 311MB disc space would be necessary for CEU and all individuals, respectively.</li>
+</ul>
+<img align="middle" src="images/DiscSpace.png" style="border:0px;margin-left:32px;margin-top:5px;margin-bottom:0px;" height="530"\>
+  
+<h3>
 <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Contact</strong>
 </h3>
 
-<p>Developed by Sophie Limou (<a href="http://github.com/limousophie35" class="user-mention">@limousophie35</a>) and Andrew Taverner: <a href="mailto:ferret@nih.gov">ferret@nih.gov</a>.</p>
+<p>Developed by Sophie Limou (<a href="http://github.com/limousophie35" class="user-mention">@limousophie35</a>) and Andrew Taverner: <a href="mailto:ferret@nih.gov">ferret@nih.gov</a>.<br>We encourage user community feedback to elicit new features.</p>
 
 <h3>
 <a id="citation" class="anchor" href="#citation" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Citation</strong>
@@ -90,9 +131,23 @@
 </h3>
 
 <h5>
+<a id="2016-february-XX" class="anchor" href="#2016-february-XX" aria-hidden="true"><span class="octicon octicon-link"></span></a>2016, Februrary XX</h5>
+
+<p>The usability and flexibility of Ferret were improved for this version: </p>
+
+<ul>
+<li>Clarification of input formats through tooltips</li>
+<li>Implementation of a progress toolbar</li>
+<li>Settings panel to select 1KG version, human genome version, and output format</li>
+<li>Possibility to set a MAF threshold for variants to output</li>
+</ul>
+
+<hr>
+  
+<h5>
 <a id="2015-august-12" class="anchor" href="#2015-august-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015, August 12</h5>
 
-<p>This new version was presented at the ASHG 2015 meeting and includes several new features: </p>
+<p>This version was presented at the ASHG 2015 meeting and includes several new features: </p>
 
 <ul>
 <li>Retrieves 1KG data from a locus, gene(s), or SNP(s) of interest,</li>
@@ -112,87 +167,111 @@
 </h3>
 
 <ol>
-<li> How to report a bug or ask a question?</li>
-<li> Which Java version does Ferret require to run on my computer?</li>
-<li> Which Ferret version do I have on my computer? How do I get the latest Ferret update?</li>
-<li> Ferret is not working: nothing is happening when hitting the ‘Run’ button.</li>
-<li> How can I get Ferret to run on a Linux/Ubuntu environment?</li>
-<li> I’m getting an error when trying to retrieve allelic frequencies from the Exome Sequencing Project. Why?</li>
-<li> How do I get the allelic frequencies in two different populations?</li>
-<li> How do I input more than one gene?</li>
-<li> How do I input more than one SNP?</li>
+<li>How to report a bug or ask a question?</li>
+<li>Which Java version does Ferret require to run on my computer?</li>
+<li>Which Ferret version do I have on my computer? How do I get the latest Ferret update?</li>
+<li>Ferret is not working: nothing is happening when hitting the ‘Run’ button.</li>
+<li>How can I get Ferret to run on a Linux/Ubuntu environment?</li>
+<li>I’m getting an error when trying to retrieve allelic frequencies from the Exome Sequencing Project. Why?</li>
+<li>How do I get the allelic frequencies in two different populations?</li>
+<li>How do I input more than one gene?</li>
+<li>How do I input more than one SNP?</li>
+<li>What 1000 Genomes version does Ferret query?</li>
+<li>What human genome version does Ferret expect?</li>
+<li>A lot of reported variants are monomorphic in my population(s) of interest. Can I set a minor allelic frequency (MAF) threshold?</li>
 <li>What can I do with the output files?</li>
 <li>In the .frq file, what do the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to?</li>
-<li>In the .frq file, what do the ESP6500_EA_A1_FREQ and ESP6500_EA_A1_FREQ fields correspond to?</li>
+<li>In the .frq file, what do the ESP6500_EA_A1_FREQ and ESP6500_EA_A1_FREQ fields correspond to? </li>
 <li>Why do I get more SNPs in the output files than input in the SNP tab?</li>
 <li>Why do I get CNV information in the .frq file and not in the Plink/HaploView files?</li>
 <li>Why do the indels appear as A/T SNP in Plink/HaploView?</li>
+<li>Can Ferret generate data in a different output format?</li>
 <li>Why are the gene coordinates different from the 1000 Genomes browser?</li>
 </ol>
 
 <p><strong>1.    How to report a bug or ask a question?</strong><br>
-First, make sure that you have the latest version installed on your computer (see #2 and 3). Then, please check carefully the website and FAQ to be sure that your problem was not already solved. Finally, you can send us an email (<a href="mailto:ferret@nih.gov">ferret@nih.gov</a>) with as much detail as possible (including your operating system and Java versions), and we’ll do our best to answer you in a timely manner.</p>
+First, make sure that you have the latest version installed on your computer (see #2 and 3). Then, please check carefully the website and FAQ to be sure that your problem was not already solved. Finally, you can send us an email (<a href="mailto:ferret@nih.gov">ferret@nih.gov</a>) and we’ll do our best to answer you in a timely manner. Please provide us with the following information so we can better assist you:<br>
+&nbsp;&nbsp;&nbsp;- Your operating system and Java versions<br>
+&nbsp;&nbsp;&nbsp;- Ferret eventual pop-up messages<br>
+&nbsp;&nbsp;&nbsp;- Whether there is a temporary .vcf file created when you launch Ferret<br>
+&nbsp;&nbsp;&nbsp;- Launch Ferret from a Terminal console (<code>java –jar Path/to/Ferret.jar</code>), try to run your &nbsp;&nbsp;&nbsp;problematic query and provide us with any error message appearing in the Terminal console.<br>
+</p>
 
 <p><strong>2.    Which Java version does Ferret require to run on my computer?</strong><br>
 Ferret’s only pre-requisite is to have <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java JRE 8</a> installed on your computer. In addition, if you are interested in querying the Exome Sequencing Project, be sure to also install <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java JDK 8</a>. The Java installations require administrative privileges. 
 For Linux/Ubuntu users, the Java JRE/JDK installation can be tricky but you can find help online from the active Linux community (like <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get">here</a> for Debian Linux, which includes Ubuntu).</p>
 
 <p><strong>3.    Which Ferret version do I have on my computer? How do I get the latest Ferret update?</strong><br>
-To know the version of Ferret installed on your computer, just launch Ferret and the version number will appear in the window title (<em>e.g.</em> Ferret v2.0.1).<br>
-Every time you restart Ferret, the software will automatically check our website for any update and a window will pop-up if any ‘minor’ or ‘critical’ update was posted, inviting you to download the latest version.</p>
+To find the version of Ferret installed on your computer, launch Ferret and the version number will appear in the window title (<em>e.g.</em> Ferret v2.0.1). You can also find the information in Help/About Ferret.<br>
+To check if a new Ferret version was released, go to Ferret/Check for updates: Ferret will check our website and invite you to download the latest version if necessary.</p>
 
 <p><strong>4.    Ferret is not working: nothing is happening when hitting the ‘Run’ button.</strong><br>
-Please make sure that your Internet connection is working properly, as Ferret needs to connect to the 1000 Genomes ftp and/or NCBI servers. Both servers are extensively accessed everyday all over the world, so please try again later to ensure that the problem does not come from overuse of NCBI and/or 1000 Genomes servers, rather than from Ferret itself. If the problem persists, do not hesitate to contact us (see #1) and indicate if a temporary .vcf file is created in the output folder.</p>
+Please make sure that your Internet connection is working properly, as Ferret needs to connect to the 1000 Genomes ftp and/or NCBI servers. Both servers are extensively accessed everyday all over the world, so please try again later to ensure that the problem does not come from overuse of NCBI and/or 1000 Genomes servers, rather than from Ferret itself. If the problem persists, do not hesitate to contact us (see #1).</p>
 
 <p><strong>5.    How can I get Ferret to run on a Linux/Ubuntu environment?</strong><br>
 If double-clicking the Ferret.jar file does not work, launch Ferret from a terminal window by typing the following command line: <code>java –jar Path/to/Ferret.jar</code>. If the problem persists, do not hesitate to contact us (see #1) and along with your Linux distribution, indicate the outputs generated from the following commands: <code>java –version</code> and <code>javac –version</code>.</p>
 
 <p><strong>6.    I’m getting an error when trying to retrieve allelic frequencies from the Exome Sequencing Project. Why?</strong><br>
-Be sure that you have Java JRE and JDK installed (see #2). If the problem persists, do not hesitate to contact us (see #1) and indicate whether a temporary file called evsClient0_14.jar is created in the same folder Ferret.jar is installed in. </p>
+Be sure that you have Java JRE and JDK installed (see #2). If the problem persists, do not hesitate to contact us (see #1) and indicate whether a temporary file called evsClient0_15.jar is created in the same folder Ferret.jar is installed in. </p>
 
 <p><strong>7.    How do I get the allelic frequencies in two different populations?</strong><br>
-The allelic frequencies information is summarized in the .frq file (see #10).<br>
+The allelic frequencies information is summarized in the .frq file (see #13).<br>
 If you are interested in the allelic frequencies in the combined group of two 1000 Genomes reference populations (<em>e.g.</em> CEU + TSI), just select simultaneously the two populations as input.<br>
 If you want to access the data from two populations independently (<em>e.g.</em> CEU and TSI separately), you will have to run two independent queries in Ferret (aka, first on CEU, and second on TSI). </p>
 
 <p><strong>8.    How do I input more than one gene?</strong><br>
 You have two options:<br>
 &nbsp;&nbsp;&nbsp;1. You can enter manually the list of genes separated by a comma in the input box;<br>
-&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of genes. A carriage return can also be used as a delimiter for all file types.<br>
+&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file &nbsp;&nbsp;&nbsp;containing the list of genes. A carriage return can also be used as a delimiter for all file types.<br>
 <em>Important:</em> do not forget to indicate if your input corresponds to gene name or gene ID.</p>
 
 <p><strong>9.    How do I input more than one SNP?</strong><br>
 You have two options:<br>
 &nbsp;&nbsp;&nbsp;1. You can enter manually the list of SNPs separated by a comma in the input box;<br>
-&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.<br>
+&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file &nbsp;&nbsp;&nbsp;containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.<br>
 <em>Important:</em> indicate only the unique rs number without the letters ‘rs’ (e.g. 333 for rs333).</p>
 
-<p><strong>10.   What can I do with the output files?</strong><br>
+<p><strong>10.   What 1000 Genomes version does Ferret query?</strong><br>
+By default, Ferret queries the most recent 1000 Genomes <a href="ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/">Phase 3</a>. Alternatively, the user can query the Phase 1 release (go to Ferret/Settings).</p>
+
+<p><strong>11.	What human genome version does Ferret expect?</strong><br>
+By default, Ferret expects hg19/GRCh37 human genome version coordinates, as stated in the locus tooltip. Alternatively, the user can opt for the hg38/GRCh38 genome coordinates to query the 1KG Phase 3 release (go to Ferret/Settings).<br>
+<em>Note:</em> The Exome Sequencing Project data have not been converted to the hg38/GRCh38 genome version so far.</p>
+
+<p><strong>12.  A lot of reported variants are monomorphic in my population(s) of interest. Can I set a minor allelic frequency (MAF) threshold?</strong><br>
+Yes, you can set-up Ferret to only output variants with a frequency above a certain threshold (go to Ferret/Settings). The MAF threshold is applied to the selected 1KG populations. Alternatively, you can also apply the MAF threshold to the Exome Sequencing Project populations: variants respecting the MAF threshold in the selected 1KG populations, or in the Exome Sequencing Project African American or European American populations will then be printed out.</p>
+
+<p><strong>13.   What can I do with the output files?</strong><br>
 Ferret generates 4 output files:<br>
-&nbsp;&nbsp;&nbsp;<em>.frq:</em> list of all identified variants (SNPs, indels and CNV) along with chromosome, variant ID, hg19 chromosome position and alleles, as well as allelic frequency in the input population(s) (see also #11 and #12). The variant ID corresponds to the rs number when available, and to the hg19 chromosome position when no rs number is reported (see also #15).<br>
+&nbsp;&nbsp;&nbsp;<em>.frq:</em> list of all identified variants (SNPs, indels and CNV) along with chromosome, variant ID, hg19 &nbsp;&nbsp;&nbsp;chromosome position and alleles, as well as allelic frequency in the selected population(s) (see &nbsp;&nbsp;&nbsp;also #14 and #15). The variant ID corresponds to the rs number when available, and to the hg19 &nbsp;&nbsp;&nbsp;chromosome position when no rs number is reported (see also #18).<br>&nbsp;&nbsp;<em>Note:</em> this file can be open with a text editor program (<em>e.g.</em> Notepad) or with a spreadsheet &nbsp;&nbsp;&nbsp;program (<em>e.g.</em> Excel).<br>
 &nbsp;&nbsp;&nbsp;<em>.map</em><br>
 &nbsp;&nbsp;&nbsp;<em>.ped</em><br>
 &nbsp;&nbsp;&nbsp;<em>.info</em><br>
-The .map, .ped and .info files allow you to open, visualize and manipulate the genotype data with the popular <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a> tools. You can then easily access linkage disequilibrium and haplotype information for the 1000 Genomes SNPs and indels, merge the 1000 Genomes data with your own datasets, design tagSNPs, etc.</p>
+The .map, .ped and .info files allow you to open, visualize and manipulate the genotype data with the popular <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a> tools. You can then easily access linkage disequilibrium and haplotype information for the 1KG SNPs and indels, merge the 1KG data with your own datasets, design tagSNPs, etc.</p>
 
-<p><strong>11.   In the .frq file, what do the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to?</strong><br>
+<p><strong>14.   In the .frq file, what do the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to?</strong><br>
 For each variant, the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to the allelic frequency in the input population(s) for allele 1 and allele 2, respectively.<br>
-If you have selected to output the allelic frequencies from the Exome Sequencing Project (ESP) as well (see #12), only the 1KG_A1_FREQ field will appear in the .frq file.</p>
+If you have selected to output the allelic frequencies from the Exome Sequencing Project (ESP) as well (see #15), only the 1KG_A1_FREQ field will appear in the .frq file.</p>
 
-<p><strong>12.   In the .frq file, what do the ESP6500_EA_A1_FREQ and ESP6500_EA_A1_FREQ fields correspond to?</strong><br>
+<p><strong>15.   In the .frq file, what do the ESP6500_EA_A1_FREQ and ESP6500_EA_A1_FREQ fields correspond to?</strong><br>
 These fields only appear in the .frq file if you selected to output Exome Sequencing Project (ESP) frequencies. For each variant, the ESP6500_EA_A1_FREQ and ESP6500_AA_A1_FREQ fields correspond to allele 1 frequency in the European American and African American ESP6500 datasets, respectively. The last ESP release is based on 6500 US individuals, including 4300 European Americans and 2203 African Americans (for more details, see the <a href="http://evs.gs.washington.edu/EVS/">ESP website</a>). ESP only provides allele and genotype counts, and does not provide genotype data: as a consequence, the Plink/HaploView files only contain the 1000 Genomes Project data.</p>
 
-<p><strong>13.   Why do I get more SNPs in the output files than input in the SNP tab?</strong><br>
+<p><strong>16.   Why do I get more SNPs in the output files than input in the SNP tab?</strong><br>
 If you input a variant, it is possible to get more than one variant in the output files if your SNP of interest is overlapping with another variant (<em>e.g.</em> indel or CNV). Alternatively, you can get more variants if you elect to include surrounding variants in a certain base-pair window range around your SNP of interest.</p>
 
-<p><strong>14.   Why do I get CNV information in the .frq file and not in the Plink/HaploView files?</strong><br>
+<p><strong>17.   Why do I get CNV information in the .frq file and not in the Plink/HaploView files?</strong><br>
 Plink and HaploView do not support CNV data. However, we included CNV information in the .frq file, as it can be useful when studying a region of interest (<em>e.g.</em> for primer design).</p>
 
-<p><strong>15.   Why do the indels appear as A/T SNPs in Plink/HaploView?</strong><br>
+<p><strong>18.   Why do the indels appear as A/T SNPs in Plink/HaploView?</strong><br>
 Plink and HaploView do not support indels. We transformed the small indels into A/T SNPs so Plink and HaploView can read them. To get the allele correspondence, report to the variant ID: the first allele corresponds to A when the second allele corresponds to T (<em>e.g.</em> indel_rs136158_AT/A for rs136158, where the first allele AT has been transformed in A, and the second allele A has been transformed in T).<br>
 The indel representation follows the <a href="http://samtools.github.io/hts-specs/VCFv4.2.pdf">vcf format coding</a> where AT/A corresponds to a T/- deletion, and C/CA corresponds to a -/A insertion.</p>
 
-<p><strong>16.   Why are the gene coordinates different from the 1000 Genomes browser?</strong><br>
+<p><strong>19.	Can Ferret generate data in a different output format?</strong><br>
+If you are not interested in the genotype data, Ferret can generate the .frq file only.<br>
+For more advanced users, we also offer to output the 1KG data in the .vcf format, which can then be merged with the user’s dataset, or used to filter out specific variants using <a href="https://vcftools.github.io/index.html">VCFtools</a>, or to annotate variants (<em>e.g.</em> gene location, functional prediction, GWAS catalog) using <a href="http://annovar.openbioinformatics.org/en/latest/">Annovar</a>. <em>Note:</em> the Exome Sequencing Project does not provide genotype data and hence cannot be included in the .vcf output.<br>
+At this stage, Ferret does not offer other output formats. However, if you are interested in the popular binary Plink (.bed/.bim/.fam) or Oxford (.gen/.sample) genomic file format, we recommend converting them from our default Plink outputs using the --make-bed <a href="http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#bed">Plink</a> option and the -P <a href="http://www.well.ox.ac.uk/~cfreeman/software/gwas/gtool.html#PED%20to%20GEN%20Conversion">GTOOL</a> option.</p>
+
+<p><strong>20.   Why are the gene coordinates different from the 1000 Genomes browser?</strong><br>
 For gene coordinates, Ferret queries the curated and non-redundant NCBI’s RefSeq database, when the 1000 Genomes browser is based on the Ensembl human gene annotations. The coordinates reported in these two databases are greatly overlapping, however some minor discrepancies can still occur.</p>
       </section>
     </div>
