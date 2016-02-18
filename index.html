@@ -202,12 +202,13 @@
 </ol>
 
 <p><strong>1.    How to report a bug or ask a question?</strong><br>
-First, make sure that you have the latest version installed on your computer (see #2 and 3). Then, please check carefully the website and FAQ to be sure that your problem was not already solved. Finally, you can send us an email (<a href="mailto:ferret@nih.gov">ferret@nih.gov</a>) and we’ll do our best to answer you in a timely manner. Please provide us with the following information so we can better assist you:<br>
-&nbsp;&nbsp;&nbsp;- Your operating system and Java versions<br>
-&nbsp;&nbsp;&nbsp;- Ferret eventual pop-up messages<br>
-&nbsp;&nbsp;&nbsp;- Whether there is a temporary .vcf file created when you launch Ferret<br>
-&nbsp;&nbsp;&nbsp;- Launch Ferret from a Terminal console (<code>java –jar Path/to/Ferret.jar</code>), try to run your &nbsp;&nbsp;&nbsp;problematic query and provide us with any error message appearing in the Terminal console.<br>
-</p>
+First, make sure that you have the latest version installed on your computer (see #2 and 3). Then, please check carefully the website and FAQ to be sure that your problem was not already solved. Finally, you can send us an email (<a href="mailto:ferret@nih.gov">ferret@nih.gov</a>) and we’ll do our best to answer you in a timely manner. Please provide us with the following information so we can better assist you:</p>
+<ul style="list-style-type:none;margin-top:-15px;">
+  <li>- Your operating system and Java versions</li>
+  <li>- Ferret eventual pop-up messages</li>
+  <li>- Whether there is a temporary .vcf file created when you launch Ferret</li>
+  <li>- Launch Ferret from a Terminal console (<code>java –jar Path/to/Ferret.jar</code>), try to run your problematic query and provide us with any error message appearing in the Terminal console.</li>
+</ul>
 
 <p><strong>2.    Which Java version does Ferret require to run on my computer?</strong><br>
 Ferret’s only pre-requisite is to have <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java JRE 8</a> installed on your computer. In addition, if you are interested in querying the Exome Sequencing Project, be sure to also install <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java JDK 8</a>. The Java installations require administrative privileges. 
@@ -235,16 +236,20 @@ If you are interested in the allelic frequencies in the combined group of two 10
 If you want to access the data from two populations independently (<em>e.g.</em> CEU and TSI separately), you will have to run two independent queries in Ferret (aka, first on CEU, and second on TSI). </p>
 
 <p><strong>9.    How do I input more than one gene?</strong><br>
-You have two options:<br>
-&nbsp;&nbsp;&nbsp;1. You can enter manually the list of genes separated by a comma in the input box;<br>
-&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file &nbsp;&nbsp;&nbsp;containing the list of genes. A carriage return can also be used as a delimiter for all file types.<br>
-<em>Important:</em> do not forget to indicate if your input corresponds to gene name or gene ID.</p>
+You have two options:</p>
+<ul style="list-style-type:none;margin-top:-15px;">
+  <li>1. You can enter manually the list of genes separated by a comma in the input box;</li>
+  <li>2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of genes. A carriage return can also be used as a delimiter for all file types.</li>
+</ul>  
+<p style="margin-top:-15px;"><em>Important:</em> do not forget to indicate if your input corresponds to gene name or gene ID.</p>
 
 <p><strong>10.    How do I input more than one SNP?</strong><br>
-You have two options:<br>
-&nbsp;&nbsp;&nbsp;1. You can enter manually the list of SNPs separated by a comma in the input box;<br>
-&nbsp;&nbsp;&nbsp;2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file &nbsp;&nbsp;&nbsp;containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.<br>
-<em>Important:</em> indicate only the unique rs number without the letters ‘rs’ (<em>e.g.</em> 2395029 for rs2395029).</p>
+You have two options:</p>
+<ul style="list-style-type:none;margin-top:-15px;">
+  <li>1. You can enter manually the list of SNPs separated by a comma in the input box;</li>
+  <li>2. You can load a comma-delimited .csv, a tab-delimited .tab or .tsv, or a space-delimited .txt file containing the list of SNPs. A carriage return can also be used as a delimiter for all file types.</li>
+</ul>  
+<p style="margin-top:-15px;"><em>Important:</em> indicate only the unique rs number without the letters ‘rs’ (<em>e.g.</em> 2395029 for rs2395029).</p>
 
 <p><strong>11.   What 1000 Genomes version does Ferret query?</strong><br>
 By default, Ferret queries the most recent 1000 Genomes <a href="ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/">Phase 3</a>. Alternatively, the user can query the Phase 1 release (go to Ferret/Settings).</p>
@@ -257,12 +262,14 @@ By default, Ferret expects hg19/GRCh37 human genome version coordinates, as stat
 Yes, you can set-up Ferret to only output variants with a frequency above a certain threshold (go to Ferret/Settings). The MAF threshold is applied to the selected 1KG populations. Alternatively, you can also apply the MAF threshold to the Exome Sequencing Project populations: variants respecting the MAF threshold in the selected 1KG populations, or in the Exome Sequencing Project African American or European American populations will then be printed out.</p>
 
 <p><strong>14.   What can I do with the output files?</strong><br>
-Ferret generates 4 output files:<br>
-&nbsp;&nbsp;&nbsp;<em>.frq:</em> list of all identified variants (SNPs, indels and CNVs) along with chromosome, variant ID, &nbsp;&nbsp;&nbsp;hg19 chromosome position and alleles, as well as allelic frequency in the selected population(s) &nbsp;&nbsp;&nbsp;(see also #15 and #16). The variant ID corresponds to the rs number when available, and to the &nbsp;&nbsp;&nbsp;hg19 chromosome position when no rs number is reported (see also #19).<br>&nbsp;&nbsp;<em>Note:</em> this file can be open with a text editor program (<em>e.g.</em> Notepad) or with a spreadsheet &nbsp;&nbsp;&nbsp;program (<em>e.g.</em> Excel).<br>
-&nbsp;&nbsp;&nbsp;<em>.map</em><br>
-&nbsp;&nbsp;&nbsp;<em>.ped</em><br>
-&nbsp;&nbsp;&nbsp;<em>.info</em><br>
-The .map, .ped and .info files allow you to open, visualize and manipulate the genotype data with the popular <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a> tools. You can then easily access linkage disequilibrium and haplotype information for the 1KG SNPs and indels, merge the 1KG data with your own datasets, design tagSNPs, etc.</p>
+Ferret generates 4 output files:</p>
+<ul style="list-style-type:none;margin-top:-15px;">
+  <li><em>.frq:</em> list of all identified variants (SNPs, indels and CNVs) along with chromosome, variant ID, hg19 chromosome position and alleles, as well as allelic frequency in the selected population(s) (see also #15 and #16). The variant ID corresponds to the rs number when available, and to the hg19 chromosome position when no rs number is reported (see also #19).<br><em>Note:</em> this file can be open with a text editor program (<em>e.g.</em> Notepad) or with a spreadsheet program (<em>e.g.</em> Excel).</li>
+  <li><em>.map</em></li>
+  <li><em>.ped</em></li>
+  <li><em>.info</em></li>
+</ul>
+<p style="margin-top:-15px;">The .map, .ped and .info files allow you to open, visualize and manipulate the genotype data with the popular <a href="http://pngu.mgh.harvard.edu/%7Epurcell/plink/">Plink</a> and <a href="http://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview">HaploView</a> tools. You can then easily access linkage disequilibrium and haplotype information for the 1KG SNPs and indels, merge the 1KG data with your own datasets, design tagSNPs, etc.</p>
 
 <p><strong>15.   In the .frq file, what do the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to?</strong><br>
 For each variant, the 1KG_A1_FREQ and 1KG_A2_FREQ fields correspond to the allelic frequency in the input population(s) for allele 1 and allele 2, respectively.<br>
